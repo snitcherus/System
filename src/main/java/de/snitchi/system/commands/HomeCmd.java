@@ -7,17 +7,14 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.Configuration;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.Plugin;
 
 public class HomeCmd implements CommandExecutor {
 
   private final Configuration configuration;
-  private final Plugin plugin;
   private final ResourceMessage resourceMessage;
 
-  public HomeCmd(Configuration configuration, Plugin plugin) {
+  public HomeCmd(Configuration configuration) {
     this.configuration = configuration;
-    this.plugin = plugin;
     this.resourceMessage = new ResourceMessage();
   }
 
