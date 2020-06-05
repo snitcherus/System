@@ -1,10 +1,10 @@
 package de.snitchi.system;
 
+import de.snitchi.system.commands.EnderChestCmd;
 import de.snitchi.system.commands.HomeCmd;
 import de.snitchi.system.commands.HomesCmd;
 import de.snitchi.system.commands.SetHomeCmd;
 import de.snitchi.system.commands.WorkbenchCmd;
-import de.snitchi.system.counter.WorkbenchCounter;
 import de.snitchi.system.factorys.InstantSmeltItemFactory;
 import de.snitchi.system.util.ConfigHandler;
 import de.snitchi.system.util.ListenerRegistry;
@@ -19,17 +19,17 @@ public class SystemPlugin extends JavaPlugin {
     ConfigHandler configHandler = new ConfigHandler();
     ResourceMessage resourceMessage = new ResourceMessage();
     InstantSmeltItemFactory instantSmeltItemFactory = new InstantSmeltItemFactory();
-    WorkbenchCounter workbenchCounter = new WorkbenchCounter(this);
 
-    registerCommands(workbenchCounter);
+    registerCommands();
     configHandler.loadConfig(this);
     listenerRegistry.registerListener(this, resourceMessage, instantSmeltItemFactory);
   }
 
-  private void registerCommands(WorkbenchCounter workbenchCounter) {
+  private void registerCommands() {
     getCommand("sethome").setExecutor(new SetHomeCmd(getConfig(), this));
     getCommand("home").setExecutor(new HomeCmd(getConfig()));
     getCommand("homes").setExecutor(new HomesCmd(getConfig()));
-    getCommand("workbench").setExecutor(new WorkbenchCmd(workbenchCounter));
+    getCommand("workbench").setExecutor(new WorkbenchCmd());
+    getCommand("enderchest").setExecutor(new EnderChestCmd());
   }
 }

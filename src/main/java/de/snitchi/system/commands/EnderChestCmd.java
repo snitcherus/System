@@ -1,16 +1,17 @@
 package de.snitchi.system.commands;
 
 import de.snitchi.system.util.ResourceMessage;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class WorkbenchCmd implements CommandExecutor {
+public class EnderChestCmd implements CommandExecutor {
 
   private final ResourceMessage resourceMessage;
 
-  public WorkbenchCmd() {
+  public EnderChestCmd() {
     this.resourceMessage = new ResourceMessage();
   }
 
@@ -23,11 +24,12 @@ public class WorkbenchCmd implements CommandExecutor {
     Player player = (Player) sender;
 
     if (args.length != 0) {
-      resourceMessage.sendMessage(player, "workbench.usage");
+      resourceMessage.sendMessage(player, "enderchest.usage");
       return true;
     }
 
-    player.openWorkbench(null, true);
+    player.playSound(player.getLocation(), Sound.BLOCK_CHEST_OPEN, 1, 1);
+    player.openInventory(player.getEnderChest());
     return true;
   }
 }

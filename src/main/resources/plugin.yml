@@ -11,3 +11,5 @@ commands:
   homes:
   workbench:
     aliases: [wb]
+  enderchest:
+    aliases: [ec]
