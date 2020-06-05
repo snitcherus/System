@@ -9,3 +9,5 @@ commands:
   sethome:
   home:
   homes:
+  workbench:
+    aliases: [wb]
