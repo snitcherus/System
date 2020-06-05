@@ -1,5 +1,6 @@
 package de.snitchi.system;
 
+import de.snitchi.system.commands.HomeCmd;
 import de.snitchi.system.commands.SetHomeCmd;
 import de.snitchi.system.factorys.InstantSmeltItemFactory;
 import de.snitchi.system.util.ConfigHandler;
@@ -23,5 +24,6 @@ public class SystemPlugin extends JavaPlugin {
 
   private void registerCommands() {
     getCommand("sethome").setExecutor(new SetHomeCmd(getConfig(), this));
+    getCommand("home").setExecutor(new HomeCmd(getConfig(), this));
   }
 }
