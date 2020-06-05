@@ -34,7 +34,8 @@ public class HomeCmd implements CommandExecutor {
 
     if (!configuration.isSet(
         player.getUniqueId() + ".Homes" + "." + args[0].toLowerCase() + ".pos")) {
-      resourceMessage.sendMessage(player, "");
+      resourceMessage.sendMessage(player, "home.home_not_set");
+      return true;
     }
 
     Location homeLocation = (Location) configuration.get(

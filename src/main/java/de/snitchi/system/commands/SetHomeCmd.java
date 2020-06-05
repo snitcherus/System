@@ -33,17 +33,19 @@ public class SetHomeCmd implements CommandExecutor {
       return true;
     }
 
+    String homeName = args[0].toLowerCase();
+
     if (configuration.isSet(
-        player.getUniqueId() + ".Homes" + "." + args[0].toLowerCase() + ".pos")) {
-      resourceMessage.sendMessage(player, "home.already_exists", args[0].toLowerCase());
+        player.getUniqueId() + ".Homes" + "." + homeName + ".pos")) {
+      resourceMessage.sendMessage(player, "home.already_exists", homeName);
       return true;
     }
 
-    configuration.set(player.getUniqueId() + ".Homes" + "." + args[0].toLowerCase() + ".pos",
+    configuration.set(player.getUniqueId() + ".Homes" + "." + homeName + ".pos",
         player.getLocation());
     plugin.saveConfig();
 
-    resourceMessage.sendMessage(player, "home.success_set");
+    resourceMessage.sendMessage(player, "home.success_set", homeName);
 
     return true;
   }
