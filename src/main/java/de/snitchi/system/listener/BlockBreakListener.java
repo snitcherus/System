@@ -56,7 +56,7 @@ public class BlockBreakListener implements Listener {
       block.setType(Material.AIR);
       player.giveExp(1);
       blockWorld.dropItemNaturally(block.getLocation(), goldIngot);
-      return;
     }
+
   }
 }
