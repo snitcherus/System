@@ -25,26 +25,26 @@ public class HomeCmd implements CommandExecutor {
     }
 
     Player player = (Player) sender;
-    String homeName = args[0].toLowerCase();
 
     if (args.length != 1) {
       resourceMessage.sendMessage(player, "home.home_usage");
       return true;
     }
 
+    String homeName = args[0].toLowerCase();
+
     if (!configuration.isSet(
-        player.getUniqueId() + ".Homes" + "." + args[0].toLowerCase() + ".pos")) {
+        player.getUniqueId() + ".Homes" + "." + homeName + ".pos")) {
       resourceMessage.sendMessage(player, "home.home_not_set");
       return true;
     }
 
     Location homeLocation = (Location) configuration.get(
-        player.getUniqueId() + ".Homes" + homeName + ".pos");
+        player.getUniqueId() + ".Homes" + "." + homeName + ".pos");
 
     assert homeLocation != null;
     player.teleport(homeLocation);
     resourceMessage.sendMessage(player, "home.home_teleport", homeName);
-
     return true;
   }
 }

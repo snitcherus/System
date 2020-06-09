@@ -29,7 +29,7 @@ public class SetHomeCmd implements CommandExecutor {
     Player player = (Player) sender;
 
     if (args.length != 1) {
-      resourceMessage.getMessage("home.set_home_usage");
+      resourceMessage.sendMessage(player, "home.set_home_usage");
       return true;
     }
 
