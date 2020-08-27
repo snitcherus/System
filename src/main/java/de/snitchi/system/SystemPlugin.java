@@ -30,6 +30,6 @@ public class SystemPlugin extends JavaPlugin {
     getCommand("home").setExecutor(new HomeCmd(getConfig()));
     getCommand("homes").setExecutor(new HomesCmd(getConfig()));
     getCommand("workbench").setExecutor(new WorkbenchCmd());
-    getCommand("enderchest").setExecutor(new EnderChestCmd());
+    getCommand("enderchest").setExecutor(new EnderChestCmd(this));
   }
 }
