@@ -46,7 +46,7 @@ public class HomesCmd implements CommandExecutor {
       homesJoin = new StringBuilder(homeColor + playerHomes.get(0));
     }
 
-    for(int i = 1; i < playerHomes.size(); i++){
+    for (int i = 1; i < playerHomes.size(); i++) {
       homesJoin.append(seperator).append(homeColor).append(playerHomes.get(i));
     }
 

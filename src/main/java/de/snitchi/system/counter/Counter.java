@@ -55,5 +55,4 @@ public abstract class Counter {
   }
 
   protected abstract void onStopped();
-
 }

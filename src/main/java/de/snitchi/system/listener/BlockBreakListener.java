@@ -41,9 +41,7 @@ public class BlockBreakListener implements Listener {
         return;
       }
 
-      block.setType(Material.AIR);
-      player.giveExp(1);
-      blockWorld.dropItemNaturally(block.getLocation(), ironIngot);
+      dropSmeltedItem(block, player, blockWorld, ironIngot);
       return;
     }
 
@@ -53,10 +51,14 @@ public class BlockBreakListener implements Listener {
         return;
       }
 
-      block.setType(Material.AIR);
-      player.giveExp(1);
-      blockWorld.dropItemNaturally(block.getLocation(), goldIngot);
+      dropSmeltedItem(block, player, blockWorld, goldIngot);
     }
+  }
 
+  private void dropSmeltedItem(Block block, Player player, World world, ItemStack itemToDrop) {
+
+    block.setType(Material.AIR);
+    player.giveExp(1);
+    world.dropItemNaturally(block.getLocation(), itemToDrop);
   }
 }

@@ -10,7 +10,7 @@ import org.bukkit.plugin.PluginManager;
 public class ListenerRegistry {
 
   public void registerListener(Plugin plugin, ResourceMessage resourceMessage,
-                               InstantSmeltItemFactory instantSmeltItemFactory){
+                               InstantSmeltItemFactory instantSmeltItemFactory) {
     PluginManager pluginManager = plugin.getServer().getPluginManager();
 
     Listener playerJoinListener = new PlayerJoinListener(resourceMessage);

@@ -13,7 +13,7 @@ public class ResourceMessage {
   /**
    * Gets the message from the Bedwars resourceBundle.
    *
-   * @param path      path to the message
+   * @param path     path to the message
    * @param replaces replaces a part of the message
    * @return formats the message
    */
