@@ -20,6 +20,12 @@ public class CooldownManager {
     this.resourceMessage = new ResourceMessage();
   }
 
+  /**
+   * Starts a cooldown.
+   * @param player player for uuid
+   * @param time time to count
+   * @param messagePath message path
+   */
   public void startCooldown(Player player, int time, String messagePath) {
     setCooldown(player.getUniqueId(), time);
 
@@ -36,6 +42,11 @@ public class CooldownManager {
     }.runTaskTimer(plugin, 20, 20);
   }
 
+  /**
+   * Sets the cooldown time and put the player in a map.
+   * @param player player for uuid
+   * @param time time to count
+   */
   public void setCooldown(UUID player, int time) {
     if (time < 1) {
       cooldowns.remove(player);

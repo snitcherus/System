@@ -34,8 +34,8 @@ public class HomesCmd implements CommandExecutor {
       return true;
     }
 
-    playerHomes.addAll(configuration.getConfigurationSection(player.getUniqueId().toString() +
-        ".Homes").getKeys(false));
+    playerHomes.addAll(configuration.getConfigurationSection(player.getUniqueId().toString()
+        + ".Homes").getKeys(false));
 
     String seperator = resourceMessage.getMessage("home.seperator");
     String homeColor = resourceMessage.getMessage("home.home_color");

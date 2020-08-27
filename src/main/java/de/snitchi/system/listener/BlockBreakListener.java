@@ -25,6 +25,10 @@ public class BlockBreakListener implements Listener {
     this.instantSmeltItemFactory = instantSmeltItemFactory;
   }
 
+  /**
+   * Drops smelted items after block break.
+   * @param event block break event
+   */
   @EventHandler
   public void onBlockBreak(BlockBreakEvent event) {
     Player player = event.getPlayer();

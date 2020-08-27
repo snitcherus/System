@@ -14,6 +14,11 @@ public class SetHomeCmd implements CommandExecutor {
   private final Configuration configuration;
   private final Plugin plugin;
 
+  /**
+   * Dependency Injection.
+   * @param configuration config
+   * @param plugin system plugin
+   */
   public SetHomeCmd(Configuration configuration, Plugin plugin) {
     this.configuration = configuration;
     this.plugin = plugin;

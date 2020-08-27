@@ -9,6 +9,12 @@ import org.bukkit.plugin.PluginManager;
 
 public class ListenerRegistry {
 
+  /**
+   * Registers all listeners.
+   * @param plugin System plugin
+   * @param resourceMessage resource message
+   * @param instantSmeltItemFactory factory class
+   */
   public void registerListener(Plugin plugin, ResourceMessage resourceMessage,
                                InstantSmeltItemFactory instantSmeltItemFactory) {
     PluginManager pluginManager = plugin.getServer().getPluginManager();

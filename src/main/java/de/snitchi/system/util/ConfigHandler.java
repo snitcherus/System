@@ -12,6 +12,10 @@ public class ConfigHandler {
 
   private FileConfiguration userConfig;
 
+  /**
+   * Loads all configs.
+   * @param plugin system plugin
+   */
   public void loadConfig(Plugin plugin) {
     plugin.getConfig().options().copyDefaults(true);
     plugin.saveConfig();
@@ -36,10 +40,18 @@ public class ConfigHandler {
     return YamlConfiguration.loadConfiguration(file);
   }
 
+  /**
+   * Gets the user config.
+   * @return returns the user config.
+   */
   public FileConfiguration getUserConfig() {
     return userConfig;
   }
 
+  /**
+   * Saves the user config.
+   * @param plugin System plugin
+   */
   public void saveUserConfig(Plugin plugin) {
     try {
       userConfig.save(new File(plugin.getDataFolder(), "userdata.yml"));
